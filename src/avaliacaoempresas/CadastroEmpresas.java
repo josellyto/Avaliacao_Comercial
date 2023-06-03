@@ -51,9 +51,9 @@ public class CadastroEmpresas extends javax.swing.JFrame {
         jLabel2.setBounds(270, 370, 60, 20);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setText("Cadastrar Estabelecimento");
+        jLabel3.setText("CADASTRAR ESTABELECIMENTO");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(550, 10, 330, 30);
+        jLabel3.setBounds(540, 10, 330, 30);
 
         tituloEstab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,7 +104,7 @@ public class CadastroEmpresas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(540, 450, 90, 23);
+        jButton1.setBounds(540, 450, 90, 28);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/IM.jpg"))); // NOI18N
         jLabel6.setPreferredSize(new java.awt.Dimension(700, 700));
@@ -115,7 +115,7 @@ public class CadastroEmpresas extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Inserir");
         getContentPane().add(jButton2);
-        jButton2.setBounds(1050, 450, 70, 23);
+        jButton2.setBounds(1050, 450, 70, 28);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/11929743_shop2.jpg"))); // NOI18N
         getContentPane().add(jLabel9);
@@ -123,7 +123,7 @@ public class CadastroEmpresas extends javax.swing.JFrame {
 
         jLabel7.setText("Senha:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(290, 160, 35, 16);
+        jLabel7.setBounds(290, 160, 37, 16);
 
         jLabel8.setText("Confirmar senha:");
         getContentPane().add(jLabel8);
@@ -134,7 +134,7 @@ public class CadastroEmpresas extends javax.swing.JFrame {
         jScrollPane1.setViewportView(descricaoEstab);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(330, 250, 300, 86);
+        jScrollPane1.setBounds(330, 250, 300, 98);
 
         jLabel10.setText("Descrição:");
         getContentPane().add(jLabel10);
@@ -155,7 +155,7 @@ public class CadastroEmpresas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(330, 440, 93, 22);
+        jComboBox1.setBounds(330, 440, 88, 26);
 
         jLabel11.setText("Telefone:");
         getContentPane().add(jLabel11);
@@ -163,7 +163,7 @@ public class CadastroEmpresas extends javax.swing.JFrame {
         getContentPane().add(telEstab);
         telEstab.setBounds(330, 400, 300, 20);
 
-        jLabel12.setText("Atenção: Todos os campos devem ser preenchidos corretamente para ser validados");
+        jLabel12.setText("Atenção: Todos os campos devem ser preenchidos corretamente para serem validados");
         getContentPane().add(jLabel12);
         jLabel12.setBounds(260, 90, 470, 16);
 

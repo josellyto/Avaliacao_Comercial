@@ -32,6 +32,8 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -50,29 +52,29 @@ public class CadastrarUsuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(nomeUser);
-        nomeUser.setBounds(300, 160, 300, 22);
+        nomeUser.setBounds(320, 160, 300, 22);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(300, 210, 300, 22);
+        jTextField2.setBounds(320, 190, 300, 22);
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(300, 260, 300, 22);
+        jTextField3.setBounds(320, 220, 300, 22);
         getContentPane().add(jTextField4);
-        jTextField4.setBounds(300, 310, 300, 22);
+        jTextField4.setBounds(320, 250, 300, 22);
 
         jLabel2.setText("Nome completo:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(210, 160, 130, 16);
+        jLabel2.setBounds(220, 160, 130, 16);
 
         jLabel3.setText("Email:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(260, 310, 34, 16);
+        jLabel3.setBounds(280, 250, 34, 16);
 
         jLabel4.setText("Celular: ");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(250, 260, 80, 16);
+        jLabel4.setBounds(270, 220, 80, 16);
 
         jLabel5.setText("Nome de usuário:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(200, 210, 130, 16);
+        jLabel5.setBounds(220, 190, 130, 16);
 
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,28 +82,28 @@ public class CadastrarUsuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField5);
-        jTextField5.setBounds(300, 400, 300, 22);
+        jTextField5.setBounds(320, 340, 300, 22);
 
-        jLabel6.setText("Cie uma senha:");
+        jLabel6.setText("Confirmar Senha:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(210, 400, 100, 16);
+        jLabel6.setBounds(220, 340, 100, 16);
 
         btnCadUser.setText("Cadastrar");
         getContentPane().add(btnCadUser);
-        btnCadUser.setBounds(390, 470, 100, 28);
+        btnCadUser.setBounds(520, 380, 100, 22);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setText("CADASTRAR USUÁRIO");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(370, 10, 280, 90);
+        jLabel7.setBounds(350, 70, 280, 90);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/review (1).png"))); // NOI18N
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(560, 90, 480, 340);
+        jLabel8.setBounds(620, 120, 480, 340);
 
-        jLabel9.setText("CPF");
+        jLabel9.setText("CPF:");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(260, 360, 30, 16);
+        jLabel9.setBounds(290, 280, 30, 16);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +111,19 @@ public class CadastrarUsuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(300, 360, 300, 20);
+        jTextField1.setBounds(320, 280, 300, 20);
+
+        jLabel10.setText("Senha:");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(280, 310, 100, 20);
+
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField6);
+        jTextField6.setBounds(320, 310, 300, 22);
 
         jMenuBar1.setBorder(null);
 
@@ -135,6 +149,10 @@ public class CadastrarUsuario extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,6 +192,7 @@ public class CadastrarUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadUser;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -190,6 +209,7 @@ public class CadastrarUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField nomeUser;
     // End of variables declaration//GEN-END:variables
 }

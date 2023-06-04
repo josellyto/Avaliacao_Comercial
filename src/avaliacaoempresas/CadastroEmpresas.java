@@ -21,9 +21,6 @@ public class CadastroEmpresas extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -34,26 +31,34 @@ public class CadastroEmpresas extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         telEstab = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(700, 600));
+        setMinimumSize(new java.awt.Dimension(700, 600));
+        setPreferredSize(new java.awt.Dimension(700, 600));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jLabel1.setText("Nome:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(290, 130, 40, 16);
+        jLabel1.setBounds(170, 100, 50, 16);
 
         jLabel2.setText("Endereço:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(270, 370, 60, 20);
+        jLabel2.setBounds(150, 370, 60, 20);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setText("CADASTRAR ESTABELECIMENTO");
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Cadastrar Estabelecimento");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(540, 10, 330, 30);
+        jLabel3.setBounds(250, 20, 330, 30);
 
         tituloEstab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,7 +66,7 @@ public class CadastroEmpresas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tituloEstab);
-        tituloEstab.setBounds(330, 220, 300, 22);
+        tituloEstab.setBounds(210, 160, 300, 22);
 
         cadSenhaEstab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,7 +74,7 @@ public class CadastroEmpresas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cadSenhaEstab);
-        cadSenhaEstab.setBounds(330, 160, 300, 22);
+        cadSenhaEstab.setBounds(210, 130, 300, 22);
 
         nomeEstab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,7 +82,7 @@ public class CadastroEmpresas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(nomeEstab);
-        nomeEstab.setBounds(330, 130, 300, 22);
+        nomeEstab.setBounds(210, 100, 300, 22);
 
         ConfirmSenhaEstab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,17 +90,17 @@ public class CadastroEmpresas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ConfirmSenhaEstab);
-        ConfirmSenhaEstab.setBounds(330, 190, 300, 22);
+        ConfirmSenhaEstab.setBounds(210, 190, 300, 22);
 
         jLabel4.setText("Categoria:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(270, 440, 60, 16);
+        jLabel4.setBounds(150, 400, 60, 16);
 
         jLabel5.setText("Titulo:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(290, 220, 40, 16);
+        jLabel5.setBounds(170, 190, 40, 16);
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Cadastrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -104,41 +109,26 @@ public class CadastroEmpresas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(540, 450, 90, 28);
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/IM.jpg"))); // NOI18N
-        jLabel6.setPreferredSize(new java.awt.Dimension(700, 700));
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, 0, 220, 840);
-
-        jButton2.setBackground(new java.awt.Color(51, 51, 51));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Inserir");
-        getContentPane().add(jButton2);
-        jButton2.setBounds(1050, 450, 70, 28);
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/11929743_shop2.jpg"))); // NOI18N
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(700, 150, 410, 290);
+        jButton1.setBounds(310, 460, 90, 23);
 
         jLabel7.setText("Senha:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(290, 160, 37, 16);
+        jLabel7.setBounds(170, 130, 40, 20);
 
         jLabel8.setText("Confirmar senha:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(230, 190, 100, 16);
+        jLabel8.setBounds(110, 160, 100, 16);
 
         descricaoEstab.setColumns(20);
         descricaoEstab.setRows(5);
         jScrollPane1.setViewportView(descricaoEstab);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(330, 250, 300, 98);
+        jScrollPane1.setBounds(210, 220, 300, 110);
 
         jLabel10.setText("Descrição:");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(270, 250, 60, 16);
+        jLabel10.setBounds(150, 220, 60, 16);
 
         enderecoEstab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,7 +136,7 @@ public class CadastroEmpresas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(enderecoEstab);
-        enderecoEstab.setBounds(330, 370, 300, 22);
+        enderecoEstab.setBounds(210, 340, 300, 22);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "Mercado", "Fastfood", "Farmácia", "Auto peças", "outros..." }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -155,33 +145,61 @@ public class CadastroEmpresas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(330, 440, 88, 26);
+        jComboBox1.setBounds(210, 400, 93, 22);
 
         jLabel11.setText("Telefone:");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(270, 400, 60, 20);
+        jLabel11.setBounds(150, 340, 60, 20);
         getContentPane().add(telEstab);
-        telEstab.setBounds(330, 400, 300, 20);
+        telEstab.setBounds(210, 370, 300, 22);
 
-        jLabel12.setText("Atenção: Todos os campos devem ser preenchidos corretamente para serem validados");
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Atenção: Todos os campos devem ser preenchidos corretamente para ser validados");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(260, 90, 470, 16);
+        jLabel12.setBounds(140, 70, 470, 16);
 
-        jLabel13.setText("Insira uma foto do estabelecimento");
-        getContentPane().add(jLabel13);
-        jLabel13.setBounds(710, 450, 210, 16);
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo3.jpg"))); // NOI18N
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(0, 60, 710, 460);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/IM.jpg"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(-3, 0, 710, 580);
 
         jMenuBar1.setBorder(null);
 
         jMenu1.setText("Início");
+
+        jRadioButtonMenuItem2.setSelected(true);
+        jRadioButtonMenuItem2.setText("Avaliações");
+        jRadioButtonMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/application_home.png"))); // NOI18N
+        jRadioButtonMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jRadioButtonMenuItem2);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Usuários");
+
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("Cadastrar");
+        jRadioButtonMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/user_add.png"))); // NOI18N
+        jRadioButtonMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jRadioButtonMenuItem1);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
-        setSize(new java.awt.Dimension(1382, 771));
+        setSize(new java.awt.Dimension(716, 608));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -195,6 +213,10 @@ public class CadastroEmpresas extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String
+        if (nomeEstab){
+            
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tituloEstabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tituloEstabActionPerformed
@@ -212,6 +234,16 @@ public class CadastroEmpresas extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        new CadastrarUsuario().setVisible(true);
+    }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
+
+    private void jRadioButtonMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        new TelaPrincipal().setVisible(true);
+    }//GEN-LAST:event_jRadioButtonMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,13 +286,12 @@ public class CadastroEmpresas extends javax.swing.JFrame {
     private javax.swing.JTextArea descricaoEstab;
     private javax.swing.JTextField enderecoEstab;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -268,10 +299,11 @@ public class CadastroEmpresas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nomeEstab;
     private javax.swing.JTextField telEstab;

@@ -52,6 +52,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar5 = new javax.swing.JMenuBar();
         jMenu9 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
+        jPopupMenu6 = new javax.swing.JPopupMenu();
         jButton1 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
@@ -59,16 +60,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
         jMenu11 = new javax.swing.JMenu();
+        jRadioButtonMenuItem4 = new javax.swing.JRadioButtonMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        jMenu12 = new javax.swing.JMenu();
+        jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jRadioButtonMenuItem5 = new javax.swing.JRadioButtonMenuItem();
 
         jMenuItem4.setText("jMenuItem4");
 
@@ -112,11 +118,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar5.add(jMenu10);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1366, 768));
+        setMinimumSize(new java.awt.Dimension(700, 600));
+        setResizable(false);
         getContentPane().setLayout(null);
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Enviar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +131,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(820, 640, 78, 37);
+        jButton1.setBounds(320, 530, 72, 23);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "Nota1", "Nota 2", "Nota 3", "Nota 4", "Nota 5" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -134,44 +140,42 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(710, 450, 120, 30);
+        jComboBox1.setBounds(290, 370, 120, 30);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Escreva um comentário:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(610, 620, 150, 28);
+        jLabel1.setBounds(20, 430, 160, 28);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("Nome do estabelecimento");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(730, 10, 330, 35);
+        jLabel2.setBounds(230, 40, 330, 35);
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("foto do estabelecimento");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(700, 420, 140, 16);
+        jLabel4.setBounds(540, 340, 140, 16);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/11929743_shop2.jpg"))); // NOI18N
         jLabel6.setText("jLabel6");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(930, 50, 400, 260);
+        jLabel6.setBounds(280, 80, 400, 260);
 
-        jLabel7.setText("selecione qual a sua avaliação para esta empresa");
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("deixe uma nota para o estabelecimento:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(680, 510, 410, 30);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/IM.jpg"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, -190, 220, 1020);
+        jLabel7.setBounds(70, 370, 270, 30);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(290, 420, 380, 90);
+        jScrollPane1.setBounds(170, 430, 380, 90);
         getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(290, 270, 0, 2);
+        jSeparator1.setBounds(290, 270, 0, 3);
 
         jTextArea2.setEditable(false);
         jTextArea2.setColumns(20);
@@ -180,22 +184,60 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTextArea2);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(270, 290, 400, 98);
+        jScrollPane2.setBounds(30, 80, 244, 260);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo3.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, 40, 700, 520);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/IM.jpg"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(0, 0, 710, 580);
 
         jMenuBar1.setBorder(null);
 
-        jMenu1.setText("    Início    ");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("     Usuário     ");
-        jMenuBar1.add(jMenu2);
-
         jMenu11.setText("     Pesquisar    ");
+
+        jRadioButtonMenuItem4.setSelected(true);
+        jRadioButtonMenuItem4.setText("jRadioButtonMenuItem4");
+        jMenu11.add(jRadioButtonMenuItem4);
+        jMenu11.add(jSeparator2);
+
         jMenuBar1.add(jMenu11);
+
+        jMenu12.setText("Usuário");
+
+        jRadioButtonMenuItem2.setSelected(true);
+        jRadioButtonMenuItem2.setText("Cadastrar");
+        jRadioButtonMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/user_add.png"))); // NOI18N
+        jRadioButtonMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu12.add(jRadioButtonMenuItem2);
+
+        jMenuBar1.add(jMenu12);
+
+        jMenu2.setText("Estabelecimento");
+
+        jRadioButtonMenuItem5.setSelected(true);
+        jRadioButtonMenuItem5.setText("Cadastrar");
+        jRadioButtonMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/loja.png"))); // NOI18N
+        jRadioButtonMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jRadioButtonMenuItem5);
+
+        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
-        setSize(new java.awt.Dimension(1378, 764));
+        setSize(new java.awt.Dimension(716, 613));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -206,6 +248,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jRadioButtonMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        new CadastrarUsuario().setVisible(true);
+    }//GEN-LAST:event_jRadioButtonMenuItem2ActionPerformed
+
+    private void jRadioButtonMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        new CadastroEmpresas().setVisible(true);
+    }//GEN-LAST:event_jRadioButtonMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,11 +308,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
+    private javax.swing.JMenu jMenu12;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -280,10 +333,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPopupMenu jPopupMenu3;
     private javax.swing.JPopupMenu jPopupMenu4;
     private javax.swing.JPopupMenu jPopupMenu5;
+    private javax.swing.JPopupMenu jPopupMenu6;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem4;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private java.awt.Menu menu1;

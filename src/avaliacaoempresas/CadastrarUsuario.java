@@ -1,6 +1,4 @@
-
 package avaliacaoempresas;
-
 
 import controller.formCadastroController;
 import dao.UsuarioDAO;
@@ -16,6 +14,7 @@ import javax.swing.JTextField;
 import modelo.Usuario;
 
 public class CadastrarUsuario extends javax.swing.JFrame {
+
     private final formCadastroController controller;
 
     public CadastrarUsuario() {
@@ -172,17 +171,17 @@ public class CadastrarUsuario extends javax.swing.JFrame {
 
     private void nomeCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeCadActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_nomeCadActionPerformed
 
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
         // TODO add your handling code here:
-        new CadastroEmpresas() .setVisible(true);
+        new CadastroEmpresas().setVisible(true);
     }//GEN-LAST:event_jMenu2ActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
         // TODO add your handling code here:
-        new TelaPrincipal ().setVisible(true);
+        new TelaPrincipal().setVisible(true);
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void senhaCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaCadActionPerformed
@@ -190,7 +189,7 @@ public class CadastrarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_senhaCadActionPerformed
 
     private void btnCadUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadUserActionPerformed
-      controller.salvaUsuario();
+        controller.salvaUsuario();
     }//GEN-LAST:event_btnCadUserActionPerformed
 
     /**

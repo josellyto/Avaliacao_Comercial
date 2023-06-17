@@ -1,4 +1,3 @@
-
 package avaliacaoempresas;
 
 public class CadastroEmpresas extends javax.swing.JFrame {
@@ -48,7 +47,7 @@ public class CadastroEmpresas extends javax.swing.JFrame {
 
         jLabel1.setText("Nome:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(170, 100, 50, 14);
+        jLabel1.setBounds(170, 100, 50, 16);
 
         jLabel2.setText("Endereço:");
         getContentPane().add(jLabel2);
@@ -94,11 +93,11 @@ public class CadastroEmpresas extends javax.swing.JFrame {
 
         jLabel4.setText("Categoria:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(150, 400, 60, 14);
+        jLabel4.setBounds(150, 400, 60, 16);
 
         jLabel5.setText("Titulo:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(170, 190, 40, 14);
+        jLabel5.setBounds(170, 190, 40, 16);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -109,7 +108,7 @@ public class CadastroEmpresas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(310, 460, 90, 23);
+        jButton1.setBounds(310, 460, 90, 22);
 
         jLabel7.setText("Senha:");
         getContentPane().add(jLabel7);
@@ -117,7 +116,7 @@ public class CadastroEmpresas extends javax.swing.JFrame {
 
         jLabel8.setText("Confirmar senha:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(110, 160, 100, 14);
+        jLabel8.setBounds(110, 160, 100, 16);
 
         descricaoEstab.setColumns(20);
         descricaoEstab.setRows(5);
@@ -128,7 +127,7 @@ public class CadastroEmpresas extends javax.swing.JFrame {
 
         jLabel10.setText("Descrição:");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(150, 220, 60, 14);
+        jLabel10.setBounds(150, 220, 60, 16);
 
         enderecoEstab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,14 +137,14 @@ public class CadastroEmpresas extends javax.swing.JFrame {
         getContentPane().add(enderecoEstab);
         enderecoEstab.setBounds(210, 340, 300, 22);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecionar", "Mercado", "Fastfood", "Farmácia", "Auto peças", "outros..." }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "Selecionar", "Mercado", "Fastfood", "Farmácia", "Auto peças", "outros..." }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
             }
         });
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(210, 400, 79, 20);
+        jComboBox1.setBounds(210, 400, 93, 22);
 
         jLabel11.setText("Telefone:");
         getContentPane().add(jLabel11);
@@ -156,7 +155,7 @@ public class CadastroEmpresas extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Atenção: Todos os campos devem ser preenchidos corretamente para ser validados");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(140, 70, 470, 14);
+        jLabel12.setBounds(140, 70, 470, 16);
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo3.jpg"))); // NOI18N
         getContentPane().add(jLabel14);
@@ -213,7 +212,7 @@ public class CadastroEmpresas extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-      
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tituloEstabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tituloEstabActionPerformed

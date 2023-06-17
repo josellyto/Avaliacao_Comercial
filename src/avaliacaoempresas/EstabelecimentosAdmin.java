@@ -52,7 +52,7 @@ public class EstabelecimentosAdmin extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Editar");
         getContentPane().add(jButton1);
-        jButton1.setBounds(510, 480, 61, 23);
+        jButton1.setBounds(510, 480, 60, 22);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -63,7 +63,7 @@ public class EstabelecimentosAdmin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(120, 480, 63, 23);
+        jButton2.setBounds(120, 480, 65, 22);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -147,7 +147,7 @@ public class EstabelecimentosAdmin extends javax.swing.JFrame {
 
     private void jRadioButtonMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem3ActionPerformed
         // TODO add your handling code here:
-        new CadastrarUsuario ().setVisible(true);
+        new CadastrarUsuario().setVisible(true);
     }//GEN-LAST:event_jRadioButtonMenuItem3ActionPerformed
 
     private void jRadioButtonMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem2ActionPerformed
@@ -157,7 +157,7 @@ public class EstabelecimentosAdmin extends javax.swing.JFrame {
 
     private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
         // TODO add your handling code here:
-        new TelaPrincipal() .setVisible(true);
+        new TelaPrincipal().setVisible(true);
     }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
 
     /**

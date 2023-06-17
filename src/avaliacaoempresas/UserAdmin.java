@@ -1,4 +1,3 @@
-
 package avaliacaoempresas;
 
 public class UserAdmin extends javax.swing.JFrame {
@@ -43,7 +42,7 @@ public class UserAdmin extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Editar");
         getContentPane().add(jButton1);
-        jButton1.setBounds(520, 480, 61, 23);
+        jButton1.setBounds(520, 480, 60, 22);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -54,7 +53,7 @@ public class UserAdmin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(130, 480, 63, 23);
+        jButton2.setBounds(130, 480, 65, 22);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Editar Usuário");
@@ -143,7 +142,7 @@ public class UserAdmin extends javax.swing.JFrame {
 
     private void jRadioButtonMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem3ActionPerformed
         // TODO add your handling code here:
-        new CadastrarUsuario ().setVisible(true);
+        new CadastrarUsuario().setVisible(true);
     }//GEN-LAST:event_jRadioButtonMenuItem3ActionPerformed
 
     private void jRadioButtonMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem2ActionPerformed
@@ -153,7 +152,7 @@ public class UserAdmin extends javax.swing.JFrame {
 
     private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
         // TODO add your handling code here:
-        new TelaPrincipal() .setVisible(true);
+        new TelaPrincipal().setVisible(true);
     }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
 
     /**

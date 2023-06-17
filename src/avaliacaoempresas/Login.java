@@ -4,7 +4,6 @@
  */
 package avaliacaoempresas;
 
-
 import controller.loginController;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -18,6 +17,7 @@ import javax.swing.JTextField;
  * @author wesker
  */
 public class Login extends javax.swing.JFrame {
+
     private final loginController controller;
 
     /**
@@ -142,17 +142,17 @@ public class Login extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         try {
             controller.autenticar();
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        
+
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        CadastrarUsuario cadastroDeUsuario  = new CadastrarUsuario();
-        new CadastrarUsuario ().setVisible(true);
+        CadastrarUsuario cadastroDeUsuario = new CadastrarUsuario();
+        new CadastrarUsuario().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -181,7 +181,7 @@ public class Login extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-      
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

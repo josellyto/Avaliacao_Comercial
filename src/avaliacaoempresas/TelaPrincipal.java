@@ -130,9 +130,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(320, 510, 63, 23);
+        jButton1.setBounds(320, 510, 62, 22);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecionar", "Nota1", "Nota 2", "Nota 3", "Nota 4", "Nota 5" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "Selecionar", "Nota1", "Nota 2", "Nota 3", "Nota 4", "Nota 5" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -164,7 +164,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(370, 290, 290, 90);
         getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(290, 270, 0, 2);
+        jSeparator1.setBounds(290, 270, 0, 3);
 
         jTextArea2.setEditable(false);
         jTextArea2.setColumns(20);

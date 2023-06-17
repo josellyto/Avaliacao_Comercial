@@ -1,10 +1,26 @@
 
 package avaliacaoempresas;
 
+
+import controller.formCadastroController;
+import dao.UsuarioDAO;
+import dao.Conexao;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import modelo.Usuario;
+
 public class CadastrarUsuario extends javax.swing.JFrame {
+    private final formCadastroController controller;
 
     public CadastrarUsuario() {
         initComponents();
+        controller = new formCadastroController(this);
     }
 
     /**
@@ -16,23 +32,22 @@ public class CadastrarUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        nomeUser = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        nomeCad = new javax.swing.JTextField();
+        emailcad = new javax.swing.JTextField();
+        celCad = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        senhaCadConfirm = new javax.swing.JPasswordField();
         btnCadUser = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        senhaCad = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
@@ -40,25 +55,21 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(700, 600));
         setMinimumSize(new java.awt.Dimension(700, 600));
-        setPreferredSize(new java.awt.Dimension(700, 600));
         setResizable(false);
         getContentPane().setLayout(null);
 
-        nomeUser.addActionListener(new java.awt.event.ActionListener() {
+        nomeCad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomeUserActionPerformed(evt);
+                nomeCadActionPerformed(evt);
             }
         });
-        getContentPane().add(nomeUser);
-        nomeUser.setBounds(240, 140, 300, 22);
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(240, 180, 300, 22);
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(240, 220, 300, 22);
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(240, 260, 300, 22);
+        getContentPane().add(nomeCad);
+        nomeCad.setBounds(240, 140, 300, 22);
+        getContentPane().add(emailcad);
+        emailcad.setBounds(240, 180, 300, 22);
+        getContentPane().add(celCad);
+        celCad.setBounds(240, 220, 300, 22);
 
         jLabel2.setText("Nome completo:");
         getContentPane().add(jLabel2);
@@ -72,47 +83,56 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         getContentPane().add(jLabel4);
         jLabel4.setBounds(190, 220, 50, 16);
 
-        jLabel5.setText("Nome de usuário:");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(140, 260, 100, 16);
-        getContentPane().add(jTextField5);
-        jTextField5.setBounds(240, 300, 300, 22);
-
         jLabel6.setText("Crie uma senha:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(150, 300, 90, 16);
+        jLabel6.setBounds(150, 260, 90, 16);
+        getContentPane().add(senhaCadConfirm);
+        senhaCadConfirm.setBounds(240, 300, 300, 22);
 
         btnCadUser.setBackground(new java.awt.Color(0, 0, 0));
         btnCadUser.setForeground(new java.awt.Color(255, 255, 255));
         btnCadUser.setText("Cadastrar");
+        btnCadUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadUserActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnCadUser);
-        btnCadUser.setBounds(350, 400, 100, 23);
+        btnCadUser.setBounds(310, 370, 100, 23);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setText("Cadastrar usuário");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(350, 40, 180, 20);
+        jLabel7.setBounds(280, 40, 180, 20);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/review (1).png"))); // NOI18N
         getContentPane().add(jLabel8);
         jLabel8.setBounds(620, 110, 530, 360);
 
+        senhaCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                senhaCadActionPerformed(evt);
+            }
+        });
+        getContentPane().add(senhaCad);
+        senhaCad.setBounds(240, 260, 300, 22);
+
         jLabel10.setText("Confirmar senha:");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(140, 340, 100, 20);
-
-        jTextField1.setText("jTextField1");
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(241, 340, 300, 22);
+        jLabel10.setBounds(140, 300, 100, 20);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo3.jpg"))); // NOI18N
         jLabel9.setText("jLabel9");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(10, 90, 690, 420);
+        jLabel9.setBounds(10, 80, 680, 420);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/IM.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, -40, 720, 890);
+        jLabel1.setBounds(0, 0, 700, 890);
+
+        jPasswordField1.setText("jPasswordField1");
+        getContentPane().add(jPasswordField1);
+        jPasswordField1.setBounds(240, 260, 90, 22);
 
         jMenuBar1.setBorder(null);
 
@@ -147,12 +167,13 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         setJMenuBar(jMenuBar1);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nomeUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeUserActionPerformed
+    private void nomeCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeCadActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_nomeUserActionPerformed
+    }//GEN-LAST:event_nomeCadActionPerformed
 
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
         // TODO add your handling code here:
@@ -163,6 +184,14 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
         new TelaPrincipal ().setVisible(true);
     }//GEN-LAST:event_jMenu1ActionPerformed
+
+    private void senhaCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaCadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_senhaCadActionPerformed
+
+    private void btnCadUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadUserActionPerformed
+      controller.salvaUsuario();
+    }//GEN-LAST:event_btnCadUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,14 +228,55 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         });
     }
 
+    public JTextField getCelCad() {
+        return celCad;
+    }
+
+    public void setCelCad(JTextField celCad) {
+        this.celCad = celCad;
+    }
+
+    public JTextField getEmailcad() {
+        return emailcad;
+    }
+
+    public void setEmailcad(JTextField emailcad) {
+        this.emailcad = emailcad;
+    }
+
+    public JTextField getNomeCad() {
+        return nomeCad;
+    }
+
+    public void setNomeCad(JTextField nomeCad) {
+        this.nomeCad = nomeCad;
+    }
+
+    public JPasswordField getSenhaCad() {
+        return senhaCad;
+    }
+
+    public void setSenhaCad(JPasswordField senhaCad) {
+        this.senhaCad = senhaCad;
+    }
+
+    public JPasswordField getSenhaCadConfirm() {
+        return senhaCadConfirm;
+    }
+
+    public void setSenhaCadConfirm(JPasswordField senhaCadConfirm) {
+        this.senhaCadConfirm = senhaCadConfirm;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadUser;
+    private javax.swing.JTextField celCad;
+    private javax.swing.JTextField emailcad;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -214,13 +284,15 @@ public class CadastrarUsuario extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField nomeUser;
+    private javax.swing.JTextField nomeCad;
+    private javax.swing.JPasswordField senhaCad;
+    private javax.swing.JPasswordField senhaCadConfirm;
     // End of variables declaration//GEN-END:variables
+
+    private void UsuarioDAO(Object object) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

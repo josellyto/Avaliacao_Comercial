@@ -4,19 +4,28 @@
  */
 package avaliacaoempresas;
 
+
+import controller.loginController;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
  * @author wesker
  */
 public class Login extends javax.swing.JFrame {
+    private final loginController controller;
 
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+        controller = new loginController(this);
     }
 
     /**
@@ -70,7 +79,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(logSenha);
-        logSenha.setBounds(210, 340, 350, 22);
+        logSenha.setBounds(210, 340, 350, 20);
         getContentPane().add(logUsername);
         logUsername.setBounds(210, 290, 350, 22);
         getContentPane().add(jLabel4);
@@ -86,7 +95,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(310, 500, 95, 30);
+        jButton1.setBounds(310, 500, 97, 30);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/review (1).png"))); // NOI18N
         getContentPane().add(jLabel5);
@@ -120,7 +129,7 @@ public class Login extends javax.swing.JFrame {
         jLabel7.setMinimumSize(new java.awt.Dimension(700, 600));
         jLabel7.setPreferredSize(new java.awt.Dimension(700, 600));
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(-10, 0, 720, 600);
+        jLabel7.setBounds(0, 0, 720, 600);
 
         setSize(new java.awt.Dimension(719, 607));
         setLocationRelativeTo(null);
@@ -131,23 +140,18 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_logSenhaActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        // TODO add your handling code here:
-        if(logUsername.getText().equals("login")&&logSenha.getText().equals("senha")){
-            JOptionPane.showMessageDialog(null,"acesso permitido");
-            new TelaPrincipal() . setVisible(true);
-        }
-        else if(logUsername.getText().equals("admin")&&logSenha.getText().equals("admin")){
-            JOptionPane.showMessageDialog(null,"acesso permitido");
-             new TelaPrincipal() . setVisible(true);
-        }
-        else {
-            JOptionPane.showMessageDialog(null,"acesso negado");
-                    }
+        try {
+            controller.autenticar();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         
+        }
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        CadastrarUsuario cadastroDeUsuario  = new CadastrarUsuario();
         new CadastrarUsuario ().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -177,13 +181,29 @@ public class Login extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+      
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);
             }
         });
+    }
+
+    public JPasswordField getLogSenha() {
+        return logSenha;
+    }
+
+    public void setLogSenha(JPasswordField logSenha) {
+        this.logSenha = logSenha;
+    }
+
+    public JTextField getLogUsername() {
+        return logUsername;
+    }
+
+    public void setLogUsername(JTextField logUsername) {
+        this.logUsername = logUsername;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

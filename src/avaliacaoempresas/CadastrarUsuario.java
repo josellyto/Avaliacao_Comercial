@@ -1,4 +1,6 @@
+
 package avaliacaoempresas;
+
 
 import controller.formCadastroController;
 import dao.UsuarioDAO;
@@ -14,8 +16,8 @@ import javax.swing.JTextField;
 import modelo.Usuario;
 
 public class CadastrarUsuario extends javax.swing.JFrame {
-
     private final formCadastroController controller;
+    private Object view;
 
     public CadastrarUsuario() {
         initComponents();
@@ -41,12 +43,13 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         senhaCadConfirm = new javax.swing.JPasswordField();
         btnCadUser = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         senhaCad = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jButton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
@@ -76,15 +79,15 @@ public class CadastrarUsuario extends javax.swing.JFrame {
 
         jLabel3.setText("email:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(200, 180, 40, 16);
+        jLabel3.setBounds(200, 180, 40, 14);
 
         jLabel4.setText("Celular: ");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(190, 220, 50, 16);
+        jLabel4.setBounds(190, 220, 50, 14);
 
         jLabel6.setText("Crie uma senha:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(150, 260, 90, 16);
+        jLabel6.setBounds(150, 260, 90, 14);
         getContentPane().add(senhaCadConfirm);
         senhaCadConfirm.setBounds(240, 300, 300, 22);
 
@@ -97,16 +100,12 @@ public class CadastrarUsuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCadUser);
-        btnCadUser.setBounds(310, 370, 100, 23);
+        btnCadUser.setBounds(340, 370, 100, 23);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setText("Cadastrar usuário");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(280, 40, 180, 20);
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/review (1).png"))); // NOI18N
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(620, 110, 530, 360);
 
         senhaCad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,6 +119,25 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         getContentPane().add(jLabel10);
         jLabel10.setBounds(140, 300, 100, 20);
 
+        jPasswordField1.setText("jPasswordField1");
+        getContentPane().add(jPasswordField1);
+        jPasswordField1.setBounds(240, 260, 111, 20);
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Login");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(340, 440, 100, 23);
+
+        jLabel5.setText("Clique aqui para ir para a pagina de login");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(290, 470, 290, 14);
+
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo3.jpg"))); // NOI18N
         jLabel9.setText("jLabel9");
         getContentPane().add(jLabel9);
@@ -128,10 +146,6 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/IM.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 700, 890);
-
-        jPasswordField1.setText("jPasswordField1");
-        getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(240, 260, 90, 22);
 
         jMenuBar1.setBorder(null);
 
@@ -143,8 +157,8 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         });
 
         jRadioButtonMenuItem1.setSelected(true);
-        jRadioButtonMenuItem1.setText("Tela Príncipal");
-        jRadioButtonMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/application_home.png"))); // NOI18N
+        jRadioButtonMenuItem1.setText("Sair");
+        jRadioButtonMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/arrow_left.png"))); // NOI18N
         jMenu1.add(jRadioButtonMenuItem1);
 
         jMenuBar1.add(jMenu1);
@@ -171,17 +185,17 @@ public class CadastrarUsuario extends javax.swing.JFrame {
 
     private void nomeCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeCadActionPerformed
         // TODO add your handling code here:
-
+        
     }//GEN-LAST:event_nomeCadActionPerformed
 
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
         // TODO add your handling code here:
-        new CadastroEmpresas().setVisible(true);
+        new CadastroEmpresas() .setVisible(true);
     }//GEN-LAST:event_jMenu2ActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
         // TODO add your handling code here:
-        new TelaPrincipal().setVisible(true);
+        new TelaPrincipal ().setVisible(true);
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void senhaCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaCadActionPerformed
@@ -189,8 +203,13 @@ public class CadastrarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_senhaCadActionPerformed
 
     private void btnCadUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadUserActionPerformed
-        controller.salvaUsuario();
+      controller.salvaUsuario();
+     
     }//GEN-LAST:event_btnCadUserActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -271,14 +290,15 @@ public class CadastrarUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btnCadUser;
     private javax.swing.JTextField celCad;
     private javax.swing.JTextField emailcad;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

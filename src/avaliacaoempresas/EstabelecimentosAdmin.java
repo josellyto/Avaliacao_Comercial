@@ -4,11 +4,25 @@
  */
 package avaliacaoempresas;
 
+import dao.UsuarioDAO;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import modelo.Usuario;
+
 /**
  *
  * @author wesker
  */
 public class EstabelecimentosAdmin extends javax.swing.JFrame {
+    private Vector usuarios;
+    private Object usuario;
 
     /**
      * Creates new form Admin
@@ -33,6 +47,7 @@ public class EstabelecimentosAdmin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
@@ -52,7 +67,7 @@ public class EstabelecimentosAdmin extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Editar");
         getContentPane().add(jButton1);
-        jButton1.setBounds(510, 480, 60, 22);
+        jButton1.setBounds(510, 480, 61, 23);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -63,17 +78,14 @@ public class EstabelecimentosAdmin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(120, 480, 65, 22);
+        jButton2.setBounds(120, 480, 63, 23);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Nome", "Senha", "Email", "Celular"
+                "null", "Título 2", "Título 3", "Título 4"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -92,7 +104,16 @@ public class EstabelecimentosAdmin extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/IM.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 700, 580);
+        jLabel2.setBounds(0, 20, 700, 580);
+
+        jButton3.setText("jButton3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(480, 0, 73, 23);
 
         jMenu1.setText("Tela principal");
 
@@ -147,7 +168,7 @@ public class EstabelecimentosAdmin extends javax.swing.JFrame {
 
     private void jRadioButtonMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem3ActionPerformed
         // TODO add your handling code here:
-        new CadastrarUsuario().setVisible(true);
+        new CadastrarUsuario ().setVisible(true);
     }//GEN-LAST:event_jRadioButtonMenuItem3ActionPerformed
 
     private void jRadioButtonMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem2ActionPerformed
@@ -157,8 +178,13 @@ public class EstabelecimentosAdmin extends javax.swing.JFrame {
 
     private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
         // TODO add your handling code here:
-        new TelaPrincipal().setVisible(true);
+        new TelaPrincipal() .setVisible(true);
     }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+      JTable = data;
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,7 +216,7 @@ public class EstabelecimentosAdmin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserAdmin().setVisible(true);
+                new EstabelecimentosAdmin().setVisible(true);
             }
         });
     }
@@ -198,6 +224,7 @@ public class EstabelecimentosAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -209,6 +236,6 @@ public class EstabelecimentosAdmin extends javax.swing.JFrame {
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public static javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

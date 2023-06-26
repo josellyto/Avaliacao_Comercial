@@ -4,11 +4,21 @@
  */
 package avaliacaoempresas;
 
+import controller.loginController;
+import dao.Conexao;
+import dao.UsuarioDAO;
+import java.sql.Connection;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import modelo.Usuario;
+
 /**
  *
  * @author wesker
  */
 public class TelaPrincipal extends javax.swing.JFrame {
+    private Object nome;
+    
 
     /**
      * Creates new form listarrempresas
@@ -53,6 +63,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu9 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
         jPopupMenu6 = new javax.swing.JPopupMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jButton1 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<String>();
         jLabel1 = new javax.swing.JLabel();
@@ -73,6 +84,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jRadioButtonMenuItem5 = new javax.swing.JRadioButtonMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        teste = new javax.swing.JCheckBoxMenuItem();
 
         jMenuItem4.setText("jMenuItem4");
 
@@ -115,6 +128,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu10.setText("Edit");
         jMenuBar5.add(jMenu10);
 
+        jMenuItem1.setText("jMenuItem1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(700, 600));
         setMinimumSize(new java.awt.Dimension(700, 600));
@@ -130,9 +145,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(320, 510, 62, 22);
+        jButton1.setBounds(320, 510, 63, 23);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "Selecionar", "Nota1", "Nota 2", "Nota 3", "Nota 4", "Nota 5" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecionar", "Nota1", "Nota 2", "Nota 3", "Nota 4", "Nota 5" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -164,7 +179,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(370, 290, 290, 90);
         getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(290, 270, 0, 3);
+        jSeparator1.setBounds(290, 270, 0, 2);
 
         jTextArea2.setEditable(false);
         jTextArea2.setColumns(20);
@@ -225,6 +240,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu1.setText("jMenu1");
+
+        teste.setSelected(true);
+        teste.setText("jCheckBoxMenuItem3");
+        teste.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                testeActionPerformed(evt);
+            }
+        });
+        jMenu1.add(teste);
+
+        jMenuBar1.add(jMenu1);
+
         setJMenuBar(jMenuBar1);
 
         pack();
@@ -248,6 +276,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         new CadastroEmpresas().setVisible(true);
     }//GEN-LAST:event_jRadioButtonMenuItem5ActionPerformed
+
+    private void testeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testeActionPerformed
+        // TODO add your handling code here:/*
+        
+    }//GEN-LAST:event_testeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -299,6 +332,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
@@ -315,6 +349,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JMenuBar jMenuBar4;
     private javax.swing.JMenuBar jMenuBar5;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
@@ -335,5 +370,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;
+    private javax.swing.JCheckBoxMenuItem teste;
     // End of variables declaration//GEN-END:variables
+
+    private Object getLogUsername() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private Object getLogSenha() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

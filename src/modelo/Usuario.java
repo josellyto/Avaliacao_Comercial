@@ -9,7 +9,7 @@ public class Usuario {
    private String celular;
   
 
-    public Usuario(int id, String nome, String senha, String email, String celular) {
+    public  Usuario(int id, String nome, String senha, String email, String celular) {
         this.id = id;
         this.nome = nome;
         this.senha = senha;
@@ -24,12 +24,21 @@ public class Usuario {
         this.celular = celular;
     }
     
+public Usuario() {
+    // Construtor vazio
+}
+// Exemplo do método setNome()
+public void setNome2(String nome) {
+    this.nome = nome;
+}
 
   public int getId(){
        return id;
       
   }
-
+ public Usuario(String nome) {
+        this.nome = nome;}
+ 
     public Usuario(String nome, String senha) {
         this.nome = nome;
         this.senha = senha;
@@ -65,5 +74,17 @@ public class Usuario {
  public void setCelular(){
      
  }
+
+    public Usuario get(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getTelefone() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setNome(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
  
 }

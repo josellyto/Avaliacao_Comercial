@@ -1,11 +1,42 @@
+
 package avaliacaoempresas;
 
+import dao.Conexao;
+import javax.swing.JTable;
+
+import dao.UsuarioDAO;
+import java.awt.Component;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.WindowConstants;
+import javax.swing.table.DefaultTableModel;
+import modelo.Usuario;
+
+
 public class UserAdmin extends javax.swing.JFrame {
+    private Object dao;
+    private Object jTable1;
+    private Iterable<Usuario> listaUsuarios;
+    private Object tabelaUsuariosEdit;
+    private Object connection;
 
     public UserAdmin() {
         initComponents();
+         
+         
     }
-
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -15,11 +46,26 @@ public class UserAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        viewSenhaTxt = new javax.swing.JTextField();
+        tbnPesquisarUser = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        viewEmailTxt = new javax.swing.JTextField();
+        viewCelTxt = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jTextField4 = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -32,57 +78,129 @@ public class UserAdmin extends javax.swing.JFrame {
         jRadioButtonMenuItem3 = new javax.swing.JRadioButtonMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(700, 600));
-        setMinimumSize(new java.awt.Dimension(700, 600));
-        setPreferredSize(new java.awt.Dimension(700, 600));
+        setMinimumSize(new java.awt.Dimension(600, 700));
         setResizable(false);
         getContentPane().setLayout(null);
-
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Editar");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(520, 480, 60, 22);
-
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Excluir");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(130, 480, 65, 22);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Editar Usuário");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(280, 20, 130, 40);
+        jLabel3.setBounds(240, 0, 130, 40);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Nome", "Senha", "Email", "Celular"
+        viewNomeTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewNomeTxtActionPerformed(evt);
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        });
+        getContentPane().add(viewNomeTxt);
+        viewNomeTxt.setBounds(70, 270, 350, 22);
+        getContentPane().add(viewSenhaTxt);
+        viewSenhaTxt.setBounds(70, 332, 350, 20);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(130, 70, 452, 350);
+        tbnPesquisarUser.setBackground(new java.awt.Color(0, 0, 0));
+        tbnPesquisarUser.setForeground(new java.awt.Color(255, 255, 255));
+        tbnPesquisarUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/zoom.png"))); // NOI18N
+        tbnPesquisarUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbnPesquisarUserActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tbnPesquisarUser);
+        tbnPesquisarUser.setBounds(440, 100, 30, 22);
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Pesquisar");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(430, 80, 60, 20);
+        getContentPane().add(jLayeredPane1);
+        jLayeredPane1.setBounds(359, 49, 0, 0);
+
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Digite o nome do usuario que deseja pesquisar");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(120, 80, 270, 14);
+
+        jLabel5.setText("Nome:");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(80, 240, 80, 20);
+        getContentPane().add(viewEmailTxt);
+        viewEmailTxt.setBounds(70, 460, 350, 22);
+
+        viewCelTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewCelTxtActionPerformed(evt);
+            }
+        });
+        getContentPane().add(viewCelTxt);
+        viewCelTxt.setBounds(70, 400, 350, 22);
+
+        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Editar Nome");
+        getContentPane().add(jButton4);
+        jButton4.setBounds(420, 270, 110, 23);
+
+        jButton6.setBackground(new java.awt.Color(0, 0, 0));
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("Editar Senha");
+        getContentPane().add(jButton6);
+        jButton6.setBounds(420, 330, 110, 23);
+
+        jTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField4);
+        jTextField4.setBounds(120, 100, 320, 22);
+
+        jButton7.setBackground(new java.awt.Color(0, 0, 0));
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setText("Editar Email");
+        getContentPane().add(jButton7);
+        jButton7.setBounds(420, 400, 110, 23);
+
+        jButton8.setBackground(new java.awt.Color(0, 0, 0));
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setText("Editar Celular");
+        getContentPane().add(jButton8);
+        jButton8.setBounds(420, 460, 110, 23);
+
+        jLabel7.setText("Senha:");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(80, 300, 50, 30);
+
+        jLabel8.setText("Email:");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(70, 380, 28, 20);
+
+        jLabel9.setText("Celular:");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(70, 440, 50, 20);
+
+        jButton1.setText("buscar todos os usuarios");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(210, 550, 180, 23);
+
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(110, 70, 370, 60);
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(80, 40, 430, 120);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo3.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 40, 700, 430);
+        jLabel2.setBounds(0, 235, 600, 455);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/IM.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 700, 580);
+        jLabel1.setBounds(0, -60, 600, 780);
 
         jMenu1.setText("Tela principal");
 
@@ -134,15 +252,12 @@ public class UserAdmin extends javax.swing.JFrame {
         setJMenuBar(jMenuBar1);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jRadioButtonMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem3ActionPerformed
         // TODO add your handling code here:
-        new CadastrarUsuario().setVisible(true);
+        new CadastrarUsuario ().setVisible(true);
     }//GEN-LAST:event_jRadioButtonMenuItem3ActionPerformed
 
     private void jRadioButtonMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem2ActionPerformed
@@ -152,13 +267,37 @@ public class UserAdmin extends javax.swing.JFrame {
 
     private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
         // TODO add your handling code here:
-        new TelaPrincipal().setVisible(true);
+        new TelaPrincipal() .setVisible(true);
     }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
 
+    private void viewNomeTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewNomeTxtActionPerformed
+       
+    }//GEN-LAST:event_viewNomeTxtActionPerformed
+
+    private void viewCelTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewCelTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewCelTxtActionPerformed
+
+   
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+       
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    
+
+    private void tbnPesquisarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbnPesquisarUserActionPerformed
+
+    }//GEN-LAST:event_tbnPesquisarUserActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new teste ().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+   
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws SQLException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -185,26 +324,47 @@ public class UserAdmin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EstabelecimentosAdmin().setVisible(true);
-            }
+                new UserAdmin().setVisible(true);
+}
         });
+         
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem3;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField4;
+    public javax.swing.JButton tbnPesquisarUser;
+    private javax.swing.JTextField viewCelTxt;
+    private javax.swing.JTextField viewEmailTxt;
+    private final javax.swing.JTextField viewNomeTxt = new javax.swing.JTextField();
+    private javax.swing.JTextField viewSenhaTxt;
     // End of variables declaration//GEN-END:variables
-}
+
+    }
+
+
+

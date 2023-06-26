@@ -27,25 +27,33 @@ public class formCadastroController {
     public formCadastroController(CadastrarUsuario view) {
         this.view = view;
     }
-
-    public void salvaUsuario() {
-
-        String nome = view.getNomeCad().getText();
-        String senha = view.getSenhaCad().getText();
-        String email = view.getEmailcad().getText();
-        String cel = view.getCelCad().getText();;
-        Usuario usuarioadm = new Usuario(nome, senha, email, cel);
+   
+    public void salvaUsuario(){
+        
+       
+         String nome = view.getNomeCad().getText();
+       String senha = view.getSenhaCad().getText();
+       String email =view.getEmailcad().getText();
+       String cel =view.getCelCad().getText();;
+        Usuario usuarioadm = new Usuario(nome,senha,email,cel);
         try {
             Connection con = new Conexao().getConnection();
             UsuarioDAO usuarioDao = new UsuarioDAO(con);
             usuarioDao.insert(usuarioadm);
-            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso");
-            new Login().setVisible(true);
-
+            JOptionPane.showMessageDialog(null,"Usuário cadastrado com sucesso");
+            new Login ().setVisible(true);
+            
         } catch (SQLException ex) {
             Logger.getLogger(CadastrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
+        
+        
+        
+        
     }
-
+    
+    
+    
+    
 }
